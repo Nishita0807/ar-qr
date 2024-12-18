@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Animation AR</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include AR.js -->
+  <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.0.1/aframe/build/aframe-ar.min.js"></script>
+  <!-- Include Three.js GLTF Loader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+  <h1>Scan the QR Code to Start AR</h1>
+  <img src="qr-code.png" alt="QR Code" width="300" />
+  <p>Point your camera at the marker to see the animation!</p>
+
+  <!-- AR.js Scene -->
+  <a-scene embedded arjs>
+    <!-- AR Marker -->
+    <a-marker preset="custom" type="pattern" url="assets/marker.patt">
+      <!-- 3D Model -->
+      <a-entity id="animated-model" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <script src="script.js"></script>
+</body>
+</html>
